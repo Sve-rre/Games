@@ -14,6 +14,12 @@
 <p>type ifconfig, check for wlan0 and read inet, should say something like "10.x.x.xxx"</p>
 
 <script>
+	
+let bgcolor = localStorage.getItem("bgcolor")
+documnemt.body.style.backgroundcolor = bgcolor
+let textcolor = localStorage.getItem("textcolor")
+document.body.style.color = textcolor
+
 let filename = "name"
 let file1 = document.getElementById("file1")
 let file2 = document.getElementById("file2")
@@ -30,11 +36,13 @@ let bgcolorbutton = document.getElementById("bgcolorbutton")
 bgcolorbutton.onclick = function(){
 	let bgcolor = prompt("what is your background color?")
 	document.body.style.backgroundColor = bgcolor
+	localStorage.setItem("bgcolor", bgcolor)
 }
 
 let textcolorbutton = document.getElementById("textcolorbutton")
 textcolorbutton.onclick = function(){
 	let textcolor = prompt("what is your text color?")
 	document.body.style.color = textcolor
+	localStorage.setItem("textcolor", textcolor)
 }
 </script>
