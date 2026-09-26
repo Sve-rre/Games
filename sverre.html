@@ -9,11 +9,7 @@
 <p id="file2"></p></p>
 <h2>Find ip adress</h2>
 <p>type ifconfig, check for wlan0 and read inet 10.0.101</p>
-<button id="tungtunggod">Tung tung god</button>
 
-<a href="csstest.html">
-	<button>Css test</button>
-</a>
 <script>
 let filename = "name"
 let file1 = document.getElementById("file1")
@@ -25,10 +21,5 @@ setname.onclick = function(){
 	filename = prompt("whats the file called?")
 	file1.textContent = "sudo rm /var/www/html/" + filename + ".html"
 	file2.textContent = "sudo ln -s /home/sverre/" + filename + ".html /var/www/html/" + filename + ".html"
-}
-
-let tungtunggod = document.getElementById("tungtunggod")
-tungtunggod.onclick = function(){
-	window.location.href = "tungtunggod.html"
 }
 </script>
