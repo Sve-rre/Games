@@ -3,12 +3,15 @@
     <button>Home</button>
 </a>
 <h1>Sverre only website</h1>
+<h2>Customise web!</h2>
+<button id="bgcolorbutton">Select background color</button>
 <h2>Sudo comands for file</h2>
 <button id="setname">Set name</button>
 <p id="file1"></p>
 <p id="file2"></p></p>
 <h2>Find inet adress</h2>
 <p>type ifconfig, check for wlan0 and read inet, should say something like "10.x.x.xxx"</p>
+
 <script>
 let filename = "name"
 let file1 = document.getElementById("file1")
@@ -22,4 +25,9 @@ setname.onclick = function(){
 	file2.textContent = "sudo ln -s /home/sverre/" + filename + ".html /var/www/html/" + filename + ".html"
 }
 
+let bgcolorbutton = document.getElementById("bgcolorbutton")
+bgcolorbutton.onclick = function(){
+	let bgcolor = prompt("what is you background color?")
+	document.body.style.backgroundColor = bgcolor
+}
 </script>
