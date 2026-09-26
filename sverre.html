@@ -26,6 +26,7 @@ setname.onclick = function(){
 fetch("https://games-dyt.pages.dev/ip.txt")
 	.then(response => response.text())
 	.then(ip => {
-		document.getElementById("ip").textContent = "ip adress : " + ip
+		document.getElementById("ip")
+		ip.textContent = "ip adress : " + ip
 	})
 </script>
