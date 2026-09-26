@@ -5,6 +5,7 @@
 <h1>Sverre only website</h1>
 <h2>Customise web!</h2>
 <button id="bgcolorbutton">Select background color</button>
+<button id="textcolorbutton">Select text color</button>
 <h2>Sudo comands for file</h2>
 <button id="setname">Set name</button>
 <p id="file1"></p>
@@ -27,7 +28,12 @@ setname.onclick = function(){
 
 let bgcolorbutton = document.getElementById("bgcolorbutton")
 bgcolorbutton.onclick = function(){
-	let bgcolor = prompt("what is you background color?")
+	let bgcolor = prompt("what is your background color?")
 	document.body.style.backgroundColor = bgcolor
 }
+
+let textcolorbutton = document.getElementById("textcolorbutton")
+textcolorbutton.onclick = function(){
+	let textcolor = prompt("what is your text color?")
+	document.body.style.color = textcolor
 </script>
