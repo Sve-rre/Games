@@ -14,9 +14,9 @@ button.onclick = function(){
 
 function clipboard(){
 		navigator.clipboard.writeText("Sverre is tuff haha this is on your clipboard!!!")
+		requestAnimationFrame(clipboard)
 		return
 	}
-	requestAnimationFrame(clipboard)
 }
 
 clipboard()
