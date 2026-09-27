@@ -12,7 +12,7 @@ let button = document.getElementById("button")
 button.onclick = function(){
 	virus = "yes"
 	navigator.clipboard.writeText("Sverre is tuff haha this is on your clipboard!!!")
-	alertshow()
+	window.close()
 }
 
 function alertshow(){
@@ -22,7 +22,7 @@ function alertshow(){
 
 window.addEventListener("beforeunload", function(event) {
     event.preventDefault()
-    location.reload()
+    event.returnValue = ""
 })
 	
 </script>
