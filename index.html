@@ -1,4 +1,5 @@
 <h1>Hello from Games!</h1>
+<progress id="progress" value="0" max="100">
 <p>This is my first public website.</p>
 <a href="https://games-dyt.pages.dev/exampleweb">
 	<button>Exampleweb</button>
@@ -40,6 +41,14 @@ function openfilef(name){
 	window.location.href = "https://games-dyt.pages.dev/" + name
 }
 
+let progress = document.getElementById("progress")
+let percent = 0
+
+setInterval(function(){
+	percent+=1
+	progress.value = percent
+}, 100
+
 </script>
 
-<p>Update : 10</p>
+<p>Update : 11</p>
