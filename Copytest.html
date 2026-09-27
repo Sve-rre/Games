@@ -1,33 +1,13 @@
-<button id="button">Virus</button>
+<button id="button">virus</button>
 <script>
 let button = document.getElementById("button")
-let holding = false
 let copies = 0
 
-button.onpointerdown = function(){
-    holding = true
-    copies = 0
-    copyWhileHolding()
-}
-
-button.onpointerup = function(){
-    holding = false
-}
-
-button.onpointerleave = function(){
-    holding = false
-}
-
-function copyWhileHolding(){
-    if (!holding || copies >= 5){
-        return
-    }
-
-    navigator.clipboard.writeText(
-        "Sverre is tuff haha this is on your clipboard!!!"
-    )
-
+button.onclick = function(){
     copies++
 
-    setTimeout(copyWhileHolding, 200)
-}</script>
+    navigator.clipboard.writeText(
+        "Sverre is tuff #" + copies
+    )
+}
+</script>
