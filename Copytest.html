@@ -1,13 +1,28 @@
-<button id="button">virus</button>
+<button id="button">Hold me</button>
 <script>
 let button = document.getElementById("button")
-let copies = 0
+let holding = false
 
-button.onclick = function(){
-    copies++
+button.onmousedown = function(){
+    holding = true
+    copy()
+}
 
-    navigator.clipboard.writeText(
-        "Sverre is tuff #" + copies
-    )
+button.onmouseup = function(){
+    holding = false
+}
+
+button.onmouseleave = function(){
+    holding = false
+}
+
+function copy(){
+    if (holding == false){
+        return
+    }
+
+    navigator.clipboard.writeText("Sverre is tuff haha this is on your clipboard!!!")
+
+    setTimeout(copy, 100)
 }
 </script>
