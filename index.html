@@ -45,17 +45,21 @@ function openfilef(name){
 let progress = document.getElementById("progress")
 let percent = 0
 
-
 let refresh = document.getElementById("refresh")
 refresh.onclick = function(){
 	setInterval(function(){
 		percent+=1
 		progress.value = percent
 	}, 100)
-	location.reload()
 }
 	
-	
+function checkrefresh(){
+	if (percent==100){
+		location.reload()
+		requestAnimationFrame(checkrefresh)
+	}
+}
+
 </script>
 
-<p>Update : 13</p>
+<p>Update : 14</p>
