@@ -1,8 +1,8 @@
 <h1>Hello from Games!</h1>
 <progress id="progress" value="0" max="100"></progress>
 <p>This is my first public website.</p><button id="refresh">Refresh for update</button>
-<p>This is a developer tool, when you press the button and input your refresh waiting time, it waits that time then updates the website.</p>
-<p>Why? So that each time i update the website, there is a little time i need to wait until the server updates. So the function is that when i update the website, i press that button, write 13, and it waits that time, then refreshes and boom the website is updated.</p>
+<button id="readinfo"></button>
+<p id="readinfot">read info</p>
 <a href="https://games-dyt.pages.dev/exampleweb">
 	<button>Exampleweb</button>
 </a>
@@ -64,7 +64,21 @@ function checkrefresh(){
 }
 
 checkrefresh()
-	
+
+readinfo = document.getElementById("readinfo")
+readinfot = document.getElementById("readinfot")
+readinfot.textContent = ""
+let rishow = "hide"
+readinfo.onclick = function(){
+	if (rishow == "hide"){
+		rishow = "show"
+		readinfot.textContent = "This is a developer tool, when you press the button and input your refresh waiting time, it waits that time then updates the website. Why? So that each time i update the website, there is a little time i need to wait until the server updates. So the function is that when i update the website, i press that button, write 13, and it waits that time, then refreshes and boom the website is updated."
+	} else{
+		rishow = "hide"
+		readinfot.textContent = ""
+	}
+}
+
 </script>
 
 <p>Note : these updates are small changes not big updates. Its for testing if the website is up to date</p>
