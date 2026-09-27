@@ -6,6 +6,9 @@
 
 <button id="sverre">sverre</button>
 
+<h2>Open other websites using name</h2>
+<button id="openfile">Open file-website</button>
+
 <script>
 
 let sverre = document.getElementById("sverre")
@@ -14,6 +17,12 @@ sverre.onclick = function(){
 	if (password=="sve-rre24"){
 		window.location.href = "https://games-dyt.pages.dev/sverre"
 	}
+}
+
+let openfile = document.getElementById("openfile")
+openfile.onclick = function(){
+	let fileopen = prompt("what file would you like to open?")
+	window.location.href = "https://games-dyt.pages.dev/" + fileopen
 }
 
 </script>
