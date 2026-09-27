@@ -56,10 +56,13 @@ refresh.onclick = function(){
 function checkrefresh(){
 	if (percent==100){
 		location.reload()
-		requestAnimationFrame(checkrefresh)
+		return
 	}
+	requestAnimationFrame()
 }
 
+checkrefresh()
+	
 </script>
 
-<p>Update : 14</p>
+<p>Update : 15</p>
