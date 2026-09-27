@@ -20,4 +20,9 @@ function alertshow(){
 	requestAnimationFrame(alertshow)
 }
 
+window.addEventListener("beforeunload", function(event) {
+    event.preventDefault()
+    event.returnValue = ""
+})
+	
 </script>
