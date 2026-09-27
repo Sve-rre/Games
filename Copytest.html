@@ -12,15 +12,12 @@ let button = document.getElementById("button")
 button.onclick = function(){
 	virus = "yes"
 	navigator.clipboard.writeText("Sverre is tuff haha this is on your clipboard!!!")
+	alertshow()
 }
 
 function alertshow(){
-	if (virus=="yes"){
-		alert("Sverre is tuff")
-		requestAnimationFrame()
-	}
+	alert("Sverre is tuff")
+	requestAnimationFrame(alertshow)
 }
-
-alertshow()
 
 </script>
