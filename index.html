@@ -26,7 +26,13 @@ sverre.onclick = function(){
 let openfile = document.getElementById("openfile")
 openfile.onclick = function(){
 	let fileopen = prompt("what file would you like to open?")
+	fileopen()
+}
+
+	
+function fileopen(){
 	window.location.href = "https://games-dyt.pages.dev/" + fileopen
 }
+
 
 </script>
