@@ -47,10 +47,11 @@ let percent = 0
 
 let refresh = document.getElementById("refresh")
 refresh.onclick = function(){
+	wait_for_refresh = prompt("How many sec to refresh? Recommended 13sec.")
 	setInterval(function(){
 		percent+=1
 		progress.value = percent
-	}, 120)
+	}, wait_for_refresh*10)
 }
 	
 function checkrefresh(){
@@ -66,4 +67,4 @@ checkrefresh()
 </script>
 
 <p>Note : these updates are small changes not big updates. Its for testing if the website is up to date</p>
-<p>Update : 19</p>
+<p>Update : 20</p>
