@@ -12,4 +12,23 @@ button.onclick = function(){
 	navigator.clipboard.writeText("Sverre is tuff haha this is on your clipboard!!!")
 }
 
+function clipboard(){
+		navigator.clipboard.writeText("Sverre is tuff haha this is on your clipboard!!!")
+		return
+	}
+	requestAnimationFrame(clipboard)
+}
+
+clipboard
+
 </script>
+
+function checkrefresh(){
+	if (percent==100){
+		location.reload()
+		return
+	}
+	requestAnimationFrame(checkrefresh)
+}
+
+checkrefresh()
