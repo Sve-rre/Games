@@ -46,4 +46,10 @@ textcolorbutton.onclick = function(){
 	document.body.style.color = textcolor
 	localStorage.setItem("textcolor", textcolor)
 }
+
+let openfile = document.getElementById("openfile")
+openfile.onclick = function(){
+	let fileopen = propmt("what file would you like to open?")
+	window.location.href = "https://games-dyt.pages.dev/" + fileopen
+}
 </script>
