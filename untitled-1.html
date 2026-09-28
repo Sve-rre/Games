@@ -1,18 +1,15 @@
-<button id="button">Copy</button>
-
-<style>
-
-button{
-    background:black;
-    color:white;
-
-</style>
+<img src="endre.png" id="endre">
 
 <script>
 
-let button = document.getElementById("button")
-button.onclick = function(){
+let endre = document.getElementById("endre")
+endre.onclick = function(){
     navigator.clipboard.writeText("Sverre is tuff")
+    window.open(
+    "https://example.com",
+    "myWindow",
+    "width=500,height=400,left=100,top=100"
+);
 }
 
 </script>
