@@ -1,15 +1,18 @@
-<button id="copy">📋 Copy</button>
+<button id="button">Copy</button>
+
+<style>
+
+button{
+    background:blue;
+    color:red;
+
+</style>
 
 <script>
-let button = document.getElementById("copy")
 
-button.onclick = function() {
-    navigator.clipboard.writeText("Hello!")
-
-    button.textContent = "✅ Copied!"
-
-    setTimeout(function() {
-        button.textContent = "📋 Copy"
-    }, 2000)
+let button = document.getElementById("button")
+button.onclick = function(){
+    navigator.clipboard.writeText("Sverre is tuff")
 }
+
 </script>
