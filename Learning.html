@@ -1,0 +1,16 @@
+<button id="button">Button</button>
+<p id="clicks"></p>
+
+<script>
+
+htmlclicks = document.getElementById("clicks")
+let clicks = Number(localStorage.getItem("name")) || 0;
+let button = document.getElementById("button")
+button.onclick = function(){
+  clicks+=1
+  htmlclicks.textContent = clicks
+  localStorage.setItem("name", clicks)
+}
+
+  
+</script>
