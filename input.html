@@ -5,9 +5,11 @@
 
 let htmlsvar = document.getElementById("svar")
 let svar = ""
-document.getElementById("svarfelt").addEventListener("input", function(){
-  svar = this.value;
-  htmlsvar.textContent = svar
+document.getElementById("svarfelt").addEventListener("keydown", function(){
+  if(event.key== "Enter"){
+    svar = this.value;
+    htmlsvar.textContent = svar
+  }
 });
 
 
