@@ -1,0 +1,15 @@
+<input id="svarfelt">
+<p id="svar">
+
+<script>
+
+let htmlsvar = document.getElementById("svar")
+let svar = ""
+document.getElementById("svarfelt").addEventListener("input", function(){
+  svar = this.value;
+  htmlsvar.textContent = svar
+});
+
+
+
+</script>
