@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Website</title>
+
+</head>
+
+<body>
+
+<script>
+
+let codeList = JSON.parse(localStorage.getItem("myCode")) || [];
+
+let code = codeList.join("\n");
+
+
+// Find the <title>
+let titleMatch = code.match(/<title>(.*?)<\/title>/i);
+
+if (titleMatch) {
+    document.title = titleMatch[1];
+}
+
+
+// Remove the title from the code
+code = code.replace(/<title>.*?<\/title>/is, "");
+
+
+// Put the rest of the HTML onto the page
+document.body.innerHTML += code;
+
+</script>
+
+</body>
+</html>
