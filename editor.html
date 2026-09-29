@@ -2,10 +2,12 @@
 
 <script>
 
+let p = document.createElement("p")
 let code = document.getElementById("code")
 code.addEventListener("input", function(){
     code.style.height = code.scrollHeight + "px"
     code.style.width = "100%"
+    p.textContent = code.value
 });
     
 </script>
