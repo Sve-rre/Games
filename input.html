@@ -1,17 +1,9 @@
-<input id="svarfelt">
-<p id="svar">
+<button onclick="printHello()">Click me</button>
+
+<p id="output"></p>
 
 <script>
-
-let htmlsvar = document.getElementById("svar")
-let svar = ""
-document.getElementById("svarfelt").addEventListener("keydown", function(){
-  if(event.key== "Enter"){
-    svar = this.value;
-    htmlsvar.textContent = svar
-  }
-});
-
-
-
+function printHello() {
+    document.getElementById("output").innerHTML += "hello<br>";
+}
 </script>
