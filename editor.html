@@ -4,8 +4,10 @@
 
 let code = document.getElementById("code")
 code.style.width = "100%"
+let code = localStorage.getItem "code"
 code.addEventListener("input", function(){
     code.style.height = code.scrollHeight + "px"
+    localStorage.setItem = ("code", code.value);
 });
 
 </script>
