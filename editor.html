@@ -2,9 +2,9 @@
 
 <script>
 
-code.style.width = "100%"
 let p = document.createElement("p")
 let code = document.getElementById("code")
+code.style.width = "100%"
 code.addEventListener("input", function(){
     code.style.height = code.scrollHeight + "px"
     p.textContent = code.value
