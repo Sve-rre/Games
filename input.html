@@ -8,8 +8,9 @@ document.getElementById("input").addEventListener("keydown", function(event){
     if (event.key == "Enter"){
         let svar = this.value;
 
-        lep p = document.createElement("p");
+        let p = document.createElement("p");
         p.textContent = svar;
+        document.body.appendChild(p);
     }
 });
 </script>
