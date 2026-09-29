@@ -1,50 +1,14 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Code Editor</title>
-
-    <style>
-        textarea {
-            width: 90%;
-            min-height: 100px;
-            resize: none;
-            overflow: hidden;
-            font-family: monospace;
-            font-size: 18px;
-        }
-    </style>
-</head>
-
-<body>
-
-<h1>My HTML Code</h1>
-
-<textarea id="code" placeholder="Type your HTML here..."></textarea>
-
-<br><br>
-
-<button onclick="sendCode()">Send to website</button>
+<textarea id="code"></textarea>
 
 <script>
 
 let code = document.getElementById("code");
 
 code.addEventListener("input", function() {
+
     this.style.height = "auto";
     this.style.height = this.scrollHeight + "px";
+
 });
 
-function sendCode() {
-
-    let codeList = code.value.split("\n");
-
-    localStorage.setItem("myCode", JSON.stringify(codeList));
-
-    window.location.href = "website.html";
-}
-
 </script>
-
-</body>
-</html>
