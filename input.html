@@ -1,9 +1,13 @@
-<button onclick="printHello()">Click me</button>
-
-<p id="output"></p>
+<title>Number guessing game</title>
+<h1>Number guessing game!</h1>
+<input id="input"></input>
 
 <script>
-function printHello() {
-    document.getElementById("output").innerHTML += "hello<br>";
-}
+
+let input = doument.getElementById("input").addEventListener("keydown", function(event){
+    if (event.key == "Enter"){
+        let svar = this.value;
+        alert(svar);
+    }
+});
 </script>
