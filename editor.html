@@ -3,8 +3,9 @@
 <script>
 
 let code = document.getElementById("code")
+code.value = localStorage.getItem ("code")
 code.style.width = "100%"
-let savedcode = localStorage.getItem ("code")
+code.style.height = code.scrollHeight + "px"
 code.addEventListener("input", function(){
     code.style.height = code.scrollHeight + "px"
     localStorage.setItem("code", code.value);
