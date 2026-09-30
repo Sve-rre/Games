@@ -1,7 +1,7 @@
 <title>HTML editor</title>
 <h1>HTML editor</h1>
-<p id="lines">Run code!</p>
-<button id="run"></button>
+<p id="lines"></p>
+<button id="run">Run code!</button>
 <textarea id = "code"></textarea>
 
 <script>
@@ -23,5 +23,6 @@ code.addEventListener("input", function(){
 let run = document.getElementById("run")
 run.onclick = function(){
     localStorage.setItem("code", code.value)
+    window.location.href = "https://games-dyt.pages.dev/website"
 }
 </script>
