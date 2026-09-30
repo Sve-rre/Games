@@ -7,11 +7,14 @@
 
 <body>
 
+<iframe id="game"></iframe>
+
 <script>
 
-let code = localStorage.getItem("code") || "";
+let code = localStorage.getItem("code") || ""
+let game = document.getElementById("game")
 
-document.body.innerHTML = code;
+game.srcdoc = code
 
 </script>
 
