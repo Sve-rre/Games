@@ -7,14 +7,20 @@
 
 <body>
 
-<iframe id="game"></iframe>
-
 <script>
 
 let code = localStorage.getItem("code") || ""
-let game = document.getElementById("game")
 
-game.srcdoc = code
+let iframe = document.createElement("iframe")
+iframe.style.width = "100%"
+iframe.style.height = "100vh"
+iframe.style.border = "none"
+
+document.body.appendChild(iframe)
+
+iframe.contentWindow.document.open()
+iframe.contentWindow.document.write(code)
+iframe.contentWindow.document.close()
 
 </script>
 
