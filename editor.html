@@ -1,25 +1,15 @@
-<h1>HTML EDITOR</h1>
-<p id="lines"></p>
-<textarea id="code"></textarea>
+<title>HTML editor</title>
+<h1>HTML editor</h1>
+<textarea id = "code"></textarea>
 
 <script>
 
-let numberoflines = document.getElementById("lines")
 let code = document.getElementById("code")
-
-code.value = localStorage.getItem("code") || ""
-
-code.style.width = "100%"
-code.style.height = "auto"
+code.style.hegiht = "auto"
 code.style.height = code.scrollHeight + "px"
-
-numberoflines.textContent = "Lines : " + code.value.split("\n").length
-
+code.style.width = "100%"
 code.addEventListener("input", function(){
     code.style.height = "auto"
     code.style.height = code.scrollHeight + "px"
-    localStorage.setItem("code", code.value)
-    numberoflines.textContent = "Lines : " + code.value.split("\n").length
-});
-
+    
 </script>
