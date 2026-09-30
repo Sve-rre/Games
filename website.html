@@ -11,9 +11,7 @@
 
 let code = localStorage.getItem("code") || "";
 
-document.open();
-document.write(code);
-document.close();
+document.body.innerHTML = code;
 
 </script>
 
