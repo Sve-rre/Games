@@ -1,31 +1,20 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Your Website</title>
-</head>
-
 <body>
 
-<iframe id="frame"></iframe>
+<iframe id="page"></iframe>
 
 <script>
 
 let code = localStorage.getItem("code") || ""
 
-let frame = document.getElementById("frame")
+let page = document.getElementById("page")
 
-frame.style.width = "100%"
-frame.style.height = "100vh"
-frame.style.border = "none"
-
-let frameDocument = frame.contentWindow.document
-
-frameDocument.open()
-frameDocument.write(code)
-frameDocument.close()
+page.srcdoc = code
 
 </script>
 
 </body>
+
 </html>
