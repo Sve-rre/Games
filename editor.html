@@ -1,12 +1,14 @@
 <title>HTML editor</title>
 <h1>HTML editor</h1>
-<textarea id = "code"></textarea>
 <p id="lines"></p>
+<button id="run"></button>
+<textarea id = "code"></textarea>
 
 <script>
 
 let lines = document.getElementById("lines")
 let code = document.getElementById("code")
+let code.value = localStorage.getItem("code") ||;
 code.style.hegiht = "auto"
 code.style.height = code.scrollHeight + "px"
 code.style.width = "100%"
@@ -15,6 +17,10 @@ code.addEventListener("input", function(){
     code.style.height = "auto"
     code.style.height = code.scrollHeight + "px"
     lines.textContent = "Lines : " + code.value.split("\n").length
+    localStorage.setItem("code", code.value)
 });
-    
+
+let run = document.getElementById("run")
+run.onclick = function(){
+    localStorage.setItem("code", code.value)
 </script>
