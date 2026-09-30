@@ -4,18 +4,20 @@
 
 <script>
 
-let numberoflines = document.getElementById("lines").length
+let numberoflines = document.getElementById("lines")
 let code = document.getElementById("code")
-code.value = localStorage.getItem("code")
+
+code.value = localStorage.getItem("code") || ""
 
 code.style.width = "100%"
 code.style.height = code.scrollHeight + "px"
 
-numberoflines.textContent = "Lines : " + code.value.split("\n")
+numberoflines.textContent = "Lines : " + code.value.split("\n").length
+
 code.addEventListener("input", function(){
     code.style.height = code.scrollHeight + "px"
     localStorage.setItem("code", code.value)
-    numberoflines.textContent = "Lines : " + code.value.split("\n")
+    numberoflines.textContent = "Lines : " + code.value.split("\n").length
 });
-    
+
 </script>
