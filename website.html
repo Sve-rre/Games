@@ -2,28 +2,24 @@
 <html>
 
 <head>
-    <title>Your website</title>
+    <title>Your Website</title>
 </head>
 
 <body>
+
+<iframe id="website"></iframe>
 
 <script>
 
 let code = localStorage.getItem("code") || ""
 
-let iframe = document.createElement("iframe")
+let website = document.getElementById("website")
 
-iframe.style.width = "100%"
-iframe.style.height = "100vh"
-iframe.style.border = "none"
+website.srcdoc = code
 
-document.body.appendChild(iframe)
-
-let iframeDocument = iframe.contentDocument
-
-iframeDocument.open()
-iframeDocument.write(code)
-iframeDocument.close()
+website.style.width = "100%"
+website.style.height = "100vh"
+website.style.border = "none"
 
 </script>
 
