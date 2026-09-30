@@ -1,46 +1,18 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>HTML editor</title>
-</head>
-
-<body>
-
-<h1>HTML editor</h1>
-<p id="lines"></p>
-<button id="run">Run code!</button>
-<br><br>
+<title>Html editor</title>
 <textarea id="code"></textarea>
 
 <script>
-
-let lines = document.getElementById("lines")
+    
 let code = document.getElementById("code")
-
-code.value = localStorage.getItem("code") || ""
-
-code.style.width = "100%"
-code.style.height = "auto"
-code.style.height = code.scrollHeight + "px"
-
-lines.textContent = "Lines : " + code.value.split("\n").length
-
+code.value = localStorage.getItem("code") ||""
+let code.stlyle.height = "auto"
+let code.style.height = code.scrollHeight + "px"
+let code.style.width = "100%"
 code.addEventListener("input", function(){
-    code.style.height = "auto"
-    code.style.height = code.scrollHeight + "px"
-    lines.textContent = "Lines : " + code.value.split("\n").length
+    let code.stlyle.height = "auto"
+    let code.style.height = code.scrollHeight + "px"
     localStorage.setItem("code", code.value)
-})
-
-let run = document.getElementById("run")
-
-run.onclick = function(){
-    localStorage.setItem("code", code.value)
-    window.location.href = "https://games-dyt.pages.dev/website"
-}
-
+});
+    
+    
 </script>
-
-</body>
-</html>
