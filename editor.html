@@ -8,13 +8,9 @@
 <body>
 
 <h1>HTML editor</h1>
-
 <p id="lines"></p>
-
 <button id="run">Run code!</button>
-
 <br><br>
-
 <textarea id="code"></textarea>
 
 <script>
@@ -33,9 +29,7 @@ lines.textContent = "Lines : " + code.value.split("\n").length
 code.addEventListener("input", function(){
     code.style.height = "auto"
     code.style.height = code.scrollHeight + "px"
-
     lines.textContent = "Lines : " + code.value.split("\n").length
-
     localStorage.setItem("code", code.value)
 })
 
@@ -49,5 +43,4 @@ run.onclick = function(){
 </script>
 
 </body>
-
 </html>
