@@ -2,6 +2,7 @@
 <button id="letter">Guess letter</button>
 <button id="word">Guess word</button><br>
 <p id="lives"></p>
+<p id="secretword"></p>
 
 <script>
 
@@ -13,11 +14,9 @@ let lives = 5
 
 let list = []
 list.push("Verity")
-  
-txtlives.textContent = "Lives : " + lives
-txt
-letter.onclick = function(){
-  let letter = prompt("guess a letter")
 
+let secretword = list[Math.floor(Math.random()list.length*)+1]
+txtword.textContent=secretword"
+txtlives.textContent = "Lives : " + lives
   
 </script>
