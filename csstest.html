@@ -1,22 +1,29 @@
-<h1>Team1</h1>
-<h1 id="team2">Team2</h1>
+<div class="teams">
 
-<h2>Stats</h2>
-<h2 id="stats2">Stats</h2>
+    <div>
+        <h1>Team1</h1>
+        <h2>Stats</h2>
+        <p>stuff</p>
+    </div>
+
+    <div class="right">
+        <h1>Team2</h1>
+        <h2>Stats</h2>
+        <p>stuff</p>
+    </div>
+
+</div>
 
 <style>
-#team2 {
-    position: absolute;
-    right: 0;
+.teams {
+    display: flex;
+    justify-content: space-between;
 }
 
-#stats2 {
-    position: absolute;
-    right: 0;
+.right {
+    text-align: right;
 }
 </style>
-</style>
-
 <style>
 
 body{
