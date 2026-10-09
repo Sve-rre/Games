@@ -11,8 +11,9 @@ input.addEventListener("keydown", function(event){
   if(event.key == "Enter"){
     letter = input.value
     input.value=""
-    createElement("p")
+    let p = document.createElement("p")
     p.textContent = letter
+    document.body.appendChild(p);
   }
 });
   
