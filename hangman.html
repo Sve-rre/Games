@@ -1,21 +1,19 @@
 <title>Hangman</title>
 <h1>Hangman</h1>
 <input id="input">
-<p id="printtest"></p>
-
 
 <script>
 
-let printtest = document.getElementById("printtest")
 let input = document.getElementById("input")
-input.maxLength = 1;
+let letter = ""
+input.maxLength = 1
 input.addEventListener("keydown", function(event){
   if(event.key == "Enter"){
-    let letter=input.value;
-    input.value = ""
-    printtest.textContent = letter
+    letter = input.value
+    input.value=""
+    createElement("p")
+    p.textContent = letter
   }
 });
-
   
 </script>
