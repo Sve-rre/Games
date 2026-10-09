@@ -1,22 +1,21 @@
+<title>Hangman</title>
 <h1>Hangman</h1>
-<button id="letter">Guess letter</button>
-<button id="word">Guess word</button><br>
-<p id="lives"></p>
-<p id="textword"></p>
+<input id="input">
+<p id="printtest"></p>
+
 
 <script>
 
-let letter = document.getElementById("letter")
-let word = document.getElementById("word")
-let txtlives = document.getElementById("lives")
-let txtword = document.getElementById("txtword")
-let lives = 5
+let printtest = document.getElementById("printtest")
+let input = document.getElementById("input")
+input.maxLength = 1;
+input.addEventListener("keydown", function(event){
+  if(event.key == "Enter"){
+    let letter=input.value;
+    input.value = ""
+    printtest.textContent = letter
+  }
+});
 
-let list = []
-list.push("Verity")
-
-let secretword = list[Math.floor(Math.random()list.length*)+1]
-txtword.textContent=secretword"
-txtlives.textContent = "Lives : " + lives
   
 </script>
