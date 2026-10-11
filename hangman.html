@@ -1,20 +1,208 @@
 <title>Hangman</title>
 <h1>Hangman</h1>
+<p style="color: red;" >NOTICE : Only use lowercase, if you use uppercase the game says that you are wrong on your guess.</p>
+<p>This game might have potential bugs, so let me know what bugs there are!</p>
+<p id="amountofwords"></p>
 <input id="input">
+<p id="consoleLog"></p>
+<p id="wordshowText"></p>
+<p id="livestext"></p>
+<p id="wrongLettersText"></p>
+<button id ="button">Guess full word!</button>
+<p>Lines of code : 208</p>
+
 
 <script>
 
+function random(min, max){
+    return Math.floor(Math.random ()*max)+min
+}
+
+let button = document.getElementById("button")
+
+//All "words.push" under this text is to add words to the list of random words it can pick between.//
+let words=[]
+words.push("javascript")
+words.push("python")
+words.push("apple")
+words.push("clock")
+words.push("hangman")
+words.push("pear")
+words.push("backpack")
+words.push("house")
+words.push("trophy")
+words.push("watch")
+words.push("headset")
+words.push("dollar")
+words.push("funky")
+words.push("snow")
+words.push("videogame")
+words.push("cube")
+words.push("triangle")
+words.push("pyramid")
+words.push("norway")
+words.push("america")
+words.push("russia")
+words.push("ukraine")
+words.push("book")
+words.push("coding")
+words.push("teacher")
+words.push("hypertext")
+words.push("markup")
+words.push("language")
+words.push("chain")
+words.push("rock")
+words.push("boulder")
+words.push("desk")
+words.push("desktop")
+words.push("geometry")
+words.push("math")
+words.push("history")
+words.push("science")
+words.push("education")
+words.push("school")
+words.push("grade")
+words.push("grades")
+words.push("programming")
+words.push("lives")
+words.push("guess")
+words.push("scratch")
+words.push("unity")
+words.push("phonk")
+words.push("song")
+words.push("music")
+words.push("screen")
+words.push("keyboard")
+words.push("television")
+words.push("win")
+words.push("father")
+words.push("mother")
+words.push("car")
+words.push("cat")
+words.push("bread")
+words.push("duck")
+words.push("guitar")
+words.push("piano")
+words.push("king")
+words.push("queen")
+words.push("sport")
+words.push("sports")
+words.push("potato")
+words.push("one")
+words.push("two")
+words.push("three")
+words.push("four")
+words.push("five")
+words.push("six")
+words.push("seven")
+words.push("eight")
+words.push("nine")
+words.push("ten")
+words.push("machine")
+words.push("bathroom")
+words.push("plant")
+words.push("carpet")
+words.push("space")
+words.push("window")
+words.push("linux")
+words.push("chrome")
+words.push("fish")
+words.push("lines")
+words.push("lamp")
+words.push("light")
+words.push("jesus")
+words.push("bible")
+words.push("god")
+words.push("religion")
+words.push("mushroom")
+words.push("shovel")
+words.push("game")
+words.push("cloud")
+words.push("text")
+words.push("newspaper")
+words.push("bike")
+words.push("dash")
+
+let amountofwords = document.getElementById("amountofwords")
+amountofwords.textContent = "Amount of random words in this game : " + words.length
+let winorlose = "na"
+let livestext = document.getElementById("livestext")
+let lives = 10
+livestext.textContent = "Lives : " + lives
+let wordshow = ""
+let wordshowText = document.getElementById("wordshowText")
+let secretWord = words[random(1, words.length)-1]
+let consoleLog = document.getElementById("consoleLog")
+let correctLetters = ""
+let wrongLetters = ""
+let wrongLettersText = document.getElementById("wrongLettersText")
+wrongLettersText.textContent = "Wrong letters : "
+let guessedLetter = ""
 let input = document.getElementById("input")
-let letter = ""
 input.maxLength = 1
-input.addEventListener("keydown", function(event){
-  if(event.key == "Enter"){
-    letter = input.value
-    input.value=""
-    let p = document.createElement("p")
-    p.textContent = letter
-    document.body.appendChild(p);
-  }
-});
-  
+consoleLog.textContent = "Make your first move!"
+
+for(let i = 0; i<secretWord.length; i++){
+    wordshow = wordshow + "_ "
+}
+wordshowText.textContent = wordshow
+    input.addEventListener("keydown", function(event){
+        if(event.key == "Enter" && winorlose == "na" && !input.value == ""){
+            guessedLetter = input.value
+            if(correctLetters.includes(guessedLetter) || wrongLetters.includes(guessedLetter)){
+                consoleLog.textContent = "Already guessed!"
+            } else {
+                if(secretWord.includes(guessedLetter)){
+                    correctLetters = correctLetters + guessedLetter
+                    consoleLog.textContent = "Correct!"
+                } else {
+                    wrongLetters = wrongLetters + guessedLetter
+                    consoleLog.textContent = "Wrong!"
+                    lives-=1
+                    wrongLettersText.textContent = "Wrong letters : " + wrongLetters
+                }
+            input.value = ""
+            wordshow = ""
+
+            for(let i = 0; i<secretWord.length; i++){
+                if(correctLetters.includes(secretWord[i])){
+                    wordshow = wordshow + secretWord[i]
+                } else {
+                    wordshow = wordshow + "_ "
+                }
+            }
+            wordshowText.textContent = wordshow
+            livestext.textContent = "Lives : " + lives
+            if(!wordshow.includes("_")){
+                winorlose = "w"
+                consoleLog.textContent = "You win!"
+                input.maxLength = 0
+            }
+            if(lives==0){
+                winorlose = "l"
+                consoleLog.textContent = "You lose! The word was : " + secretWord
+                input.maxLength = 0
+            }
+            }
+
+        }
+    })
+button.onclick = function(){
+    if(winorlose=="na"){
+        let guessWord = prompt("What do you think the word it?")
+        if(guessWord == secretWord){
+            wordshow = secretWord
+            wordshowText.textContent = secretWord
+            winorlose = "w"
+            consoleLog.textContent = "You win!"
+            input.maxLength = 0
+        } else {
+            consoleLog.textContent = "Wrong word!"
+            lives-=1
+            livestext.textContent = "Lives : " + lives
+        }
+    } else{
+        alert("You can't guess a word after the game is done!")
+    }
+}
 </script>
