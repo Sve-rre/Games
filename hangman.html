@@ -217,6 +217,11 @@ custom.onclick = function(){
         secretWord = prompt("What shall the word be?")
         lives = prompt("How many lives?")
         livestext.textContent = "lives : " + lives
+        wordshow = ""
+        for(let i = 0; i<secretWord.length; i++){
+            wordshow = wordshow + "_ "
+        }
+        wordshowText.textContent = wordshow
     } else {
         alert("You change the word after starting the round!")
     }
