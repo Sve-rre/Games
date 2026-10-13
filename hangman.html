@@ -9,7 +9,8 @@
 <p id="livestext"></p>
 <p id="wrongLettersText"></p>
 <button id ="button">Guess full word!</button>
-<p>Lines of code : 216</p>
+<p>Lines of code : 233+</p>
+<button id="custom">Custom word</button>
 
 
 <script>
@@ -122,7 +123,10 @@ words.push("text")
 words.push("newspaper")
 words.push("bike")
 words.push("dash")
+words.push("coffee")
+words.push("calculation")
 
+let startedgame = "no"
 let amountofwords = document.getElementById("amountofwords")
 amountofwords.textContent = "Amount of random words in this game : " + words.length
 let winorlose = "na"
@@ -147,6 +151,7 @@ for(let i = 0; i<secretWord.length; i++){
 }
 wordshowText.textContent = wordshow
     input.addEventListener("keydown", function(event){
+        startedgame = "yes"
         if(event.key == "Enter" && winorlose == "na" && !input.value == ""){
             guessedLetter = input.value
             if(correctLetters.includes(guessedLetter) || wrongLetters.includes(guessedLetter)){
@@ -205,6 +210,18 @@ button.onclick = function(){
         alert("You can't guess a word after the game is done!")
     }
 }
+
+let custom = document.getElementById("custom")
+custom.onclick = function(){
+    if(startedgame == "no"){
+        secretWord = prompt("What shall the word be?")
+        lives = prompt("How many lives?")
+        livestext.textContent = "lives : " + lives
+    } else {
+        alert("You change the word after starting the round!")
+    }
+}
+
 </script>
 
 <style>
