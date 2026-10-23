@@ -1,0 +1,96 @@
+<title>Waste your time!</title>
+<h1 id="h1">Waste your time!</h1>
+<p id="seconds"></p>
+<p id="persec"></p>
+<br>
+<br>
+<h2>Shop</h2>
+<button id="upgrade1">+1 second</button> <span id="cost1"></span><br>
+<br>
+<br>
+<h2>Options</h2>
+<button id="save">Save progress</button><br>
+<button id="wipe">Wipe save</button><br>
+
+<script>
+
+let seconds = Number(localStorage.getItem("Sseconds")) || 0
+let Tseconds = document.getElementById("seconds")
+let persec = Number(localStorage.getItem("Spersec")) || 1
+let Tpersec = document.getElementById("persec")
+
+let cost1 = Number(localStorage.getItem("Scost1")) || 30
+let Tcost1 = document.getElementById("cost1")
+let owned1 = Number(localStorage.getItem("Sowned1")) || 0
+
+setInterval(() => {
+    seconds+=persec
+}, 1000);
+
+let h1 = document.getElementById("h1")
+
+let upgrade1 = document.getElementById("upgrade1")
+upgrade1.onclick = function(){
+    if(seconds>cost1-1){
+        seconds-=cost1
+        cost1*=1.2
+        persec+=1
+        owned1+=1
+    }
+}
+
+let saveprogress = document.getElementById("save")
+saveprogress.onclick = function(){
+    localStorage.setItem("Sseconds", seconds)
+    localStorage.setItem("Spersec", persec)
+    localStorage.setItem("Scost1", cost1)
+    localStorage.setItem("Sowned1", owned1)
+}
+
+let wipesave = document.getElementById("wipe")
+wipe.onclick = function(){
+    if(confirm("wanna wipe your save?")==true){
+        localStorage.removeItem("Sseconds")
+        localStorage.removeItem("Spersec")
+        localStorage.removeItem("Scost1")
+        localStorage.removeItem("Sowned1")
+        location.reload()
+    } else {
+        alert("then why did you click it?")
+    }
+}
+
+</script>
+
+<script>
+
+function updateFrame(){
+    Tseconds.textContent = "Seconds : " + Math.floor(seconds)
+    Tcost1.textContent = "Price : " + Math.floor(cost1) + " Owned : " + owned1
+    Tpersec.textContent = "Per sec : " + persec
+
+    requestAnimationFrame(updateFrame)
+}
+requestAnimationFrame(updateFrame)
+
+</script>
+
+<style>
+
+p {
+    margin-bottom:0px;
+    margin-top:0px;
+}
+h1 {
+    margin-bottom:-10px;
+}
+h2{
+    margin-bottom:0px;
+    margin-top:-5px;
+}
+body{
+    background-color:#041A46;
+    color:#0E5DFF;
+}
+
+</style>
