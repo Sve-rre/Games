@@ -1,0 +1,104 @@
+<title>Lucky guess</title>
+<div id="box1"></div>
+<div id="box2"></div>
+<p id="correctguesses"></p>
+<p id="best"></p>
+<p id="rarity"></p>
+
+<style>
+
+#box1{
+    height:250px;
+    width:250px;
+    background-color:red;
+
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(calc(-50% - 125px), -50%);
+}
+#box2{
+    height:250px;
+    width:250px;
+    background-color:blue;
+
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(calc(-50% + 125px), -50%);
+}
+
+</style>
+
+<script>
+
+function random(min, max){
+    return Math.floor(Math.random()*(max-min+1))+min
+}
+
+let correctbox = random(1, 2)
+let correctguesses = document.getElementById("correctguesses")
+correctguesses.textContent = "Correct : 0"
+let guesses = 0
+let rarity = 1
+let best = Number(localStorage.getItem("Sbest") || 1)
+let Trarity = document.getElementById("rarity")
+let box1 = document.getElementById("box1")
+box1.onclick = function(){
+    if(correctbox==1){
+        guesses+=1
+        correctguesses.textContent = "Correct : " + guesses
+        correctbox = random(1, 2)
+    } else {
+        correctbox=0
+        document.body.style.backgroundColor = "darkred"
+        rarity=1
+        for(let i = 0; i<guesses; i++){
+            rarity*=2
+        }
+        Trarity.textContent = "You are 1 in " + rarity
+        if(rarity>best){
+            best=rarity
+            localStorage.setItem("Sbest", best)
+            Tbest.textContent = "Best : 1 in " + best
+        }
+
+    }
+}
+
+let box2 = document.getElementById("box2")
+box2.onclick = function(){
+    if(correctbox==2){
+        guesses+=1
+        correctguesses.textContent = "Correct : " + guesses
+        correctbox = random(1, 2)
+    } else {
+        correctbox = 0
+        document.body.style.backgroundColor = "darkred"
+        rarity=1
+        for(let i = 0; i<guesses; i++){
+            rarity*=2
+        }
+        Trarity.textContent = "You are 1 in " + rarity
+        if(rarity>best){
+            best=rarity
+            localStorage.setItem("Sbest", best)
+            Tbest.textContent = "Best : 1 in " + best
+        }
+    }
+}
+
+document.addEventListener("keydown", function(event) {
+    if(event.key === "r"){
+        guesses = 0
+        document.body.style.backgroundColor = "white"
+        correctguesses.textContent = "Correct : 0"
+        correctbox = random(1, 2)
+
+    }
+});
+
+let Tbest = document.getElementById("best")
+Tbest.textContent = "Best : 1 in " + best
+
+</script>
